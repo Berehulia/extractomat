@@ -49,7 +49,7 @@ if __name__ == "__main__":
             "entity",
         ],
     )
-    nlp.max_length = 10_000_000
+    nlp.max_length = 15_000_000
     layout = spaCyLayout(nlp)
 
     n_min = 1 if args.allow_single_word else 2
