@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
         if input_file.suffix == ".txt":
             tagged_doc = nlp(input_file.read_text(encoding="utf-8").lower())
-        if input_file.suffix == ".csv":
+        elif input_file.suffix == ".csv":
             print(f"Skipping {input_file} as CSV input is not supported.")
             continue
         else:
@@ -98,7 +98,7 @@ if __name__ == "__main__":
             raise ValueError(f"Invalid method: {args.method}")
 
         with open(
-            output_file, "w", encoding="utf-8"
+            output_file, "w", encoding="utf-8", newline=""
         ) as f:
             writer = csv.DictWriter(
                 f,
